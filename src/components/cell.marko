@@ -1,0 +1,18 @@
+class {
+    onCreate() {
+    }
+    click() {
+    	console.log("clicked!")
+    }
+}
+ 
+style {
+    div.emptycell {
+		height: 50px;
+		width: 50px;
+		background: yellow;
+		border:1px solid #000;
+    }
+}
+
+<div class="emptycell" on-click('click')>${input.value}</div>

@@ -1,4 +1,5 @@
-var helloComponent = require('./hello');
+var tictactoeComponent = require('./tictactoe');
  
-helloComponent.renderSync({ name:'Marko' })
-    .appendTo(document.body);
+tictactoeComponent
+  .renderSync()
+  .appendTo(document.body);

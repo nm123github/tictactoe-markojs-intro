@@ -1,0 +1,31 @@
+class {
+    onCreate() {
+        this.state = {
+            board:[]
+        };
+    }
+}
+ 
+style {
+    div.board {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;  
+        width: 160px;
+        background: white
+    }
+}
+
+<div class="board">
+  <Cell value="X" />
+  <Cell value="O" />
+  <Cell value="X" />
+  <Cell value="X" />
+  <Cell value="X" />
+  <Cell value="X" />
+  <Cell value="X" />
+  <Cell value="X" />
+  <Cell value="X" />
+</div>

@@ -1,4 +1,4 @@
-var tictactoeComponent = require('./tictactoe');
+var tictactoeComponent = require('./components/tictactoe');
  
 tictactoeComponent
   .renderSync()

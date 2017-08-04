@@ -1,0 +1,6 @@
+.emptycell {
+		height: 50px;
+		width: 50px;
+		background: yellow;
+		border:1px solid #000;
+    }

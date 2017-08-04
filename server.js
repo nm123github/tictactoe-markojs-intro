@@ -11,7 +11,7 @@ var app = express();
 app.use(markoExpress()); //enable res.marko(template, data)
 
 // Allow all of the generated files under "static" to be served up by Express
-app.use('/', serveStatic(__dirname + '/static'));
+app.use('/', serveStatic(__dirname + '/build'));
 
 /*app.get('/', function (req, res) {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');

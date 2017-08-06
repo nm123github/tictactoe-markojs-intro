@@ -7,4 +7,4 @@ class {
     }
 }
 
-<div.emptycell on-click('click')>${input.value}</div>
+<div class={ cell:true, xcell:input.value==='X', ocell:input.value==='O' } on-click('click')>${input.value}</div>

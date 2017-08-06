@@ -2,8 +2,8 @@
 class {
     onCreate() {
     }
-    click() {
-    	console.log("clickedd!")
+    click(id) {
+    	this.emit('cell-click', this.input.id);
     }
 }
 

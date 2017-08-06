@@ -1,0 +1,13 @@
+
+class {
+	onClick() {
+		this.emit('reset');
+	}
+}
+
+<div>
+  <div.winner>Winner: ${input.winner}</div>
+  <div>
+    <button.reset on-click('onClick')>Reset</button>
+  </div>
+</div>

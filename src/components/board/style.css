@@ -1,9 +1,9 @@
 .board {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;  
-        width: 160px;
-        background: white
-    }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;  
+    width: 160px;
+    background: white
+}

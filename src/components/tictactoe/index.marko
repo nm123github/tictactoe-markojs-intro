@@ -1,4 +1,23 @@
 
-class {}
+class {
+	onCreate() {
+	  this.state = {
+		winner: ''
+	  }
+	}
 
-<board />
+	onReset() {
+	  this.state.winner = '';
+
+	  // probably an anti-pattern, but whatever!
+	  this.getComponent('board').reset();
+	}
+
+	onHasWinner(winner) {
+      this.state.winner = winner;
+	}
+}
+
+
+<board key="board" rows=3 cols=3 on-has-winner('onHasWinner') />
+<dashboard winner='${state.winner}' on-reset('onReset') />

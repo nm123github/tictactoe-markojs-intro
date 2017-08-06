@@ -1,20 +1,64 @@
 
 class {
-    onCreate() {
-        this.state = {
-            board:[]
-        };
+    
+    onCreate(input) {
+      this.state = {
+        board: this.createEmptyBoard(input.rows, input.cols),
+        currentPlayer: 'X',
+      }
     }
+
+    switchPlayer() {
+      this.state.currentPlayer = 
+        this.state.currentPlayer==='X'?'O':'X';
+    }
+
+    createEmptyBoard(rows, cols) {
+      var board = new Array(rows);
+      for ( var i = 0 ; i < rows ; i++ ) {
+        board[i] = new Array(cols);
+        board[i].fill('');
+      }      
+      return board;
+    }
+
+    reset() {
+      this.state.board = this.createEmptyBoard(this.input.rows, this.input.cols);
+    }
+
+    hasWinner() {
+      // whoever sets 0-0 wins!
+      return this.state.board[0][0];
+    }
+
+    onCellClick(id) {
+      
+      // get i-j
+      var i = parseInt(id.split("-")[0]);
+      var j = parseInt(id.split("-")[1]);
+      
+      if ( this.state.board[i][j] !== '' )
+        return;
+
+      // play
+      this.state.board[i][j] = this.state.currentPlayer;
+      this.switchPlayer();
+
+      var winner = this.hasWinner();
+      if ( winner ) {
+        this.emit('has-winner', winner);
+      }
+
+      // https://github.com/marko-js/marko-widgets/blob/master/docs/faq.md
+      this.setStateDirty('board');
+    }
+
 }
 
 <div.board>
-  <cell value="O" />
-  <cell value="O" />
-  <cell value="O" />
-  <cell value="X" />
-  <cell value="X" />
-  <cell value="X" />
-  <cell value="X" />
-  <cell value="X" />
-  <cell value="O" />
+  <for(i from 0 to input.rows-1)>
+    <for(j from 0 to input.cols-1)>
+      <cell value="${state.board[i][j]}" id="${i}-${j}" key="${i}-${j}" on-cell-click('onCellClick') />
+    </for>
+  </for>
 </div>

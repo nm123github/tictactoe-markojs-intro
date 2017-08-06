@@ -1,6 +1,9 @@
 .emptycell {
-		height: 50px;
-		width: 50px;
-		background: yellow;
-		border:1px solid #000;
-    }
+	display:flex;
+	justify-content: center;
+    align-items: center;	
+	height: 50px;
+	width: 50px;
+	background: yellow;
+	border:1px solid #000;
+}

@@ -1,9 +1,30 @@
 
 class {
 	onCreate() {
+	  console.log('onCreate tictactoe')
 	  this.state = {
 		winner: ''
 	  }
+	}
+
+	onInput(input, out) {
+	  console.log('onInput tictactoe')
+	}
+
+	onRender(out) {
+	  console.log('onRender tictactoe')
+	}
+
+	onMount() {
+	  console.log('onMount tictactoe')
+	}
+
+	onUpdate() {
+	  console.log('onUpdate tictactoe')
+	}
+
+	onDestroy() {
+	  console.log('onDestroy tictactoe')
 	}
 
 	onReset() {

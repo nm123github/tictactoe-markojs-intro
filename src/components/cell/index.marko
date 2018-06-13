@@ -1,7 +1,30 @@
 
 class {
-    onCreate() {
-    }
+
+	onCreate(input, out) {
+	  console.log('onCreate cell')
+	}
+
+	onInput(input, out) {
+	  console.log('onInput cell')
+	}
+
+	onRender(out) {
+	  console.log('onRender cell')
+	}
+
+	onMount() {
+	  console.log('onMount cell')
+	}
+
+	onUpdate() {
+	  console.log('onUpdate cell')
+	}
+
+	onDestroy() {
+	  console.log('onDestroy cell')
+	}
+
     click(id) {
     	this.emit('cell-click', this.input.id);
     }

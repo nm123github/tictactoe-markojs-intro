@@ -2,10 +2,31 @@
 class {
     
     onCreate(input) {
+      console.log('onCreate board')
       this.state = {
         board: this.createEmptyBoard(input.rows, input.cols),
         currentPlayer: 'X',
       }
+    }
+
+    onInput(input, out) {
+      console.log('onInput board')
+    }
+
+    onRender(out) {
+      console.log('onRender board')
+    }
+
+    onMount() {
+      console.log('onMount board')
+    }
+
+    onUpdate() {
+      console.log('onUpdate board')
+    }
+
+    onDestroy() {
+      console.log('onDestroy board')
     }
 
     switchPlayer() {
@@ -32,7 +53,7 @@ class {
     }
 
     onCellClick(id) {
-      
+        
       // get i-j
       var i = parseInt(id.split("-")[0]);
       var j = parseInt(id.split("-")[1]);

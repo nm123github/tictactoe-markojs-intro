@@ -1,5 +1,30 @@
 
 class {
+
+	onCreate(input, out) {
+	  console.log('onCreate dashboard')
+	}
+
+	onInput(input, out) {
+	  console.log('onInput dashboard')
+	}
+
+	onRender(out) {
+	  console.log('onRender dashboard')
+	}
+
+	onMount() {
+	  console.log('onMount dashboard')
+	}
+
+	onUpdate() {
+	  console.log('onUpdate dashboard')
+	}
+
+	onDestroy() {
+	  console.log('onDestroy dashboard')
+	}
+
 	onClick() {
 		this.emit('reset');
 	}
